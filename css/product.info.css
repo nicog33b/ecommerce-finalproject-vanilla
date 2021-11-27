@@ -1,0 +1,124 @@
+
+.imgRelacionado{
+height:250px;
+width: 450px;
+border-radius:3px;
+margin-right: 3px;
+margin-left:3px;
+margin-bottom:1em;
+
+}
+#productosRelacionados{
+  margin-top:1em;
+ 
+}
+.userRel{
+  border-color:black;
+  border-radius:1em;
+}
+/* color de las estrellas de puntuación*/
+.comentarioUsuario{
+ display:grid;
+ font-family:Georgia, 'Times New Roman', Times, serif;
+ font-size:24px;
+ border-radius: '\f086';
+}
+
+.checked {
+  color: orange;
+}
+
+#cajaComentarios{
+  margin-top:9em;
+  margin-bottom: 12em;  
+}
+#infoProducto{
+  /*la propiedad grid de display permite que el contenido se estire en todo el div, permitiendo que el contenido sea
+  responsive y claramente agradable visualmente.*/
+  display:grid;
+  
+}
+#nombreProducto{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border: white 8px outset;
+}
+#formComentario{
+margin-top:60px;
+max-width: 50%;
+max-height: 50%;
+}
+#contenedor_principal{
+    margin-top:10px;
+    background-color:white;
+}
+img{
+border-radius: 10px;
+}
+.boton-epico { 
+    color: #006910; 
+    background-color: #FBFF78; 
+    border-color: #3D18F5; 
+  } 
+   
+  .boton-epico:hover, 
+  .boton-epico:focus, 
+  .boton-epico:active, 
+  .boton-epico.active, 
+  .open .dropdown-toggle.boton-epico { 
+    color: #006910; 
+    background-color: #FFFAC4; 
+    border-color: #3D18F5; 
+  } 
+   
+  .boton-epico:active, 
+  .boton-epico.active, 
+  .open .dropdown-toggle.boton-epico { 
+    background-image: none; 
+  } 
+   
+  .boton-epico.disabled, 
+  .boton-epico[disabled], 
+  fieldset[disabled] .boton-epico, 
+  .boton-epico.disabled:hover, 
+  .boton-epico[disabled]:hover, 
+  fieldset[disabled] .boton-epico:hover, 
+  .boton-epico.disabled:focus, 
+  .boton-epico[disabled]:focus, 
+  fieldset[disabled] .boton-epico:focus, 
+  .boton-epico.disabled:active, 
+  .boton-epico[disabled]:active, 
+  fieldset[disabled] .boton-epico:active, 
+  .boton-epico.disabled.active, 
+  .boton-epico[disabled].active, 
+  fieldset[disabled] .boton-epico.active { 
+    background-color: #FBFF78; 
+    border-color: #3D18F5; 
+  } 
+   
+  .boton-epico .badge { 
+    color: #FBFF78; 
+    background-color: #006910; 
+  }
+
+#right{
+    display: flex;
+  align-items: right;
+  justify-content: right;
+}
+
+#textComentario{
+   
+    display:flex;
+      resize: none;
+}
+
+#botonComentario{
+
+margin-top:20px;
+border:palegreen;
+}
+
+#btnSubmit{
+    width: 350px;
+    height:100;
+}

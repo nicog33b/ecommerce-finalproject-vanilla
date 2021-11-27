@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>FeriApp - ¡Bienvenido a tu feria online!</title>
+  <link href="css/cart.css" rel="stylesheet">
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/dropzone.css" rel="stylesheet">
+  <link href="css/nav.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-dark navbar-expand-lg site-header   sticky-top py-1 bg-dark">
+    <div class="container">
+
+      <div id="separacion">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a id="login-main" class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a id="vendedorDesactivado" class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <li class="nav-item">
+
+
+            <div id="userNombre" class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="usuario" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+              </button>
+              <div id="mostrarOcultar" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+                <a class="dropdown-item" href="index.html" id="cerrar">Cerrar sesión</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+  </nav>
+
+  <div id="ventanaMainCart" class="container rounded cart">
+    <div class="row no-gutters">
+      <div class="col-md-8">
+        <div class="product-details mr-2">
+          <div class="d-flex flex-row align-items-center"><i class="fa fa-long-arrow-left"></i>
+            <h1>&nbsp;&nbsp;Mi carrito</h1>
+          </div>
+          <div class="d-flex justify-content-between">
+            <div class="d-flex flex-row align-items-center">
+              <div class="price ml-2"><i class="fa fa-angle-down"></i></div>
+            </div>
+          </div>
+          <span id="cartItems">
+            <div class="container">
+              <table id="cart" class="table table-hover table-condensed">
+                <thead>
+                  <tr>
+                    <th style="width:45%">Product</th>
+                    <th id="selectCurrency" style="width:10%">Price</th>
+                    <th style="width:5.1%">Quantity</th>
+                    <th style="width:10%">Delete</th>
+                    <th style="width:15%" class="text-center">Subtotal</th>
+
+                  </tr>
+                </thead>
+                <tbody id="itemsDelCarrito">
+
+
+                  </tr>
+
+                </tbody>
+                <div>
+
+                </div>
+              </table>
+
+            </div>
+          </span>
+        </div>
+      </div>
+      <div class="col-md-4">
+
+
+
+
+        <button id="buttonMethodPay" type="button" class="btn btn-primary btn-block d-flex justify-content-between mt-3"
+          data-toggle="modal" data-target="#exampleModalLong">¿Como pagar? <label class="radio"> <span><img width="30"
+                src="https://img.icons8.com/color/48/000000/mastercard.png" /></span> </label>
+          <label class="radio"> <span><img width="30" src="https://img.icons8.com/officel/48/000000/visa.png" /></span>
+          </label>
+          <label class="radio"> <span><img width="30"
+                src="https://img.icons8.com/officel/48/000000/paypal.png" /></span> </label></button>
+
+        <hr class="line">
+        <div class="form-check form-check-inline">
+
+          <input class="checkGroup1" type="checkbox" id="premiumEnvio" value="option1" onclick="clearGroup(this)">
+          <label class="d-flex justify-content-between information" for="inlineCheckbox1">Premium</label>
+          <span>(2-5 días)</span>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="checkGroup1" type="checkbox" id="expressEnvio" value="option2" onclick="clearGroup(this)">
+          <label class="d-flex justify-content-between information" for="inlineCheckbox2">Express</label>
+          <span>(5-8 días)</span>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="checkGroup1" type="checkbox" id="standardEnvio" value="option3" onclick="clearGroup(this)"
+            checked>
+          <label class="d-flex justify-content-between information" for="inlineCheckbox3">Standard</label>
+          <span>(12 a 15 días)</span>
+
+        </div>
+        <hr class="line">
+        <div class="d-flex justify-content-between information"><span>Subtotal</span><span id="subtotal"></span>
+        </div>
+        <div class="d-flex justify-content-between information"><span>Envío</span><span id="envio">$20.00</span></div>
+        <div class="d-flex justify-content-between information"><span>Total(Incl. Envío)</span><span
+            id="total+iva">$3020.00</span>
+        </div><button id="buttonCheckout" class="btn btn-primary btn-block d-flex justify-content-between mt-3"
+          type="submit" disabled><span id="total">$3020.00</span><span>Checkout<i
+              class="fa fa-long-arrow-right ml-1"></i></span></button>
+        <br>
+        <div id="location">
+          <img src="img/envio.png" width="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <select id="selectCountry" class="form-select" aria-label="Disabled select example"></select>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div id="bodyModal" class="modal-content">
+
+        <!-- <form> -->
+        <div id="payment" class="payment-info">
+
+          <label class="radio"> <input type="radio" name="card" value="payment" checked> <span><img width="30"
+                src="https://img.icons8.com/color/48/000000/mastercard.png" /></span> </label>
+          <label class="radio"> <input type="radio" name="card" value="payment"> <span><img width="30"
+                src="https://img.icons8.com/officel/48/000000/visa.png" /></span> </label>
+          <label class="radio"> <input type="radio" name="card" value="payment"> <span><img width="30"
+                src="https://img.icons8.com/officel/48/000000/paypal.png" /></span> </label>
+          <div><label class="credit-card-label">Name on card</label><input id="nameBuy" name="userBuyer" type="text"
+              class="form-control credit-inputs" placeholder="Name" required></div>
+          <div><label class="credit-card-label">Card number</label><input id="cardBuy" name="cardBuy" type="text"
+              class="form-control credit-inputs" placeholder="0000 0000 0000 0000" required></div>
+          <div class="row">
+            <div class="col-md-6"><label class="credit-card-label">Date</label><input id="dateBuy" name="dateBuy"
+                type="text" class="form-control credit-inputs" placeholder="12/24" required></div>
+            <div class="col-md-6"><label class="credit-card-label">CVV</label><input id="cvvBuy" name="cvvBuy"
+                type="text" class="form-control credit-inputs" placeholder="342" required></div>
+          </div>
+          <div><label class="credit-card-label">Calle</label><input id="calleBuy" name="calleBuy" type="text"
+              class="form-control credit-inputs" placeholder="Calle" required></div>
+          <div><label class="credit-card-label">Entre esquina</label><input id="esquinaBuy" name="esquinaBuy"
+              type="text" class="form-control credit-inputs" placeholder="Esquinas" required></div>
+          <div class="row">
+
+            <div class="col-md-6"><label class="credit-card-label"><span class="text-center">Numero</span></label><input
+                id="numberBuy" name="numberBuy" type="text" class="form-control credit-inputs" placeholder="1862"
+                required></div>
+          </div>
+
+        </div>
+
+
+
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button id="save" type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+        <!-- </form> -->
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/dropzone.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/nav.js"></script>
+</body>
+
+</html>

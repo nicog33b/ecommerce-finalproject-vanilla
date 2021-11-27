@@ -1,0 +1,25 @@
+#usuario{
+    color: #fff;
+    background-color: #1e7e34;
+    border-color: #1c7430;
+    align-items:right;
+   }
+  
+   a{
+    color: #fff;
+   }
+
+   .nav-item{
+    align-items: stretch
+   }
+/*
+   #ocultarMostrar{
+    display: none;
+   }
+
+   
+     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="cart.html">Mi carrito</a>
+                        <a class="dropdown-item" href="index.html" id="cerrar">Cerrar sesión</a>
+                      </div>
+                    </div>*/

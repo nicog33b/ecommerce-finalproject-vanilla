@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>FeriApp - ¡Bienvenido a tu feria online!</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/login.css" rel="stylesheet">
+
+</head>
+
+<!--1) Cree los botones y los labels.--->
+<!--2) Required a los campos para volverlos obligatorios.
+       placeholder:Escribe un texto suave en el textbox.
+       autofocus: Se enfoca el texto en el campo cuando recarga la pagina.--->
+
+
+
+<body class="text-center">
+
+
+
+
+
+  <form action="main.html" class="signin" id="formLogin">
+    <!-- Titulo -->
+
+
+    <!-- Logo De Empresa -->
+    <img src="img/LogoMercado.png"> <br><br>
+    <!-- Correo -->
+    <input type="email" id="correo" class="loginEstilo" placeholder="Correo electrónico" required="" autofocus="">
+    </br></br>
+
+    <!-- Contraseña -->
+    <input type="password" id="contraseña" class="loginEstilo" placeholder="Contraseña" required=""> </br></br>
+
+    <!-- Boton que envía el formulario.--->
+    <input type="submit" id="botonEnvio" value="Login">
+    <br>
+    <br>
+    <fb:login-button onclick="testAPI()" onclick="checkLoginState() " appId="534968161160578"
+      scope="public_profile,email" id="facebook-login-button">
+    </fb:login-button>
+
+    <div id="status"></div>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+      src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v11.0&appId=534968161160578&autoLogAppEvents=1"
+      nonce="G8WxhRuK"></script>
+
+  </form>
+
+
+  <script src="js/facebookSDK.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/nav.js"></script>
+</body>
+
+<!--ASDDDDDDDDDDDDDD-->
+
+</html>

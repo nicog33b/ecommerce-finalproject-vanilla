@@ -1,0 +1,61 @@
+
+.bottom-aligned {
+    display: flex;
+    align-items: flex-end;
+}
+#search{
+  display: flex;
+ 
+}
+#nameProducto{
+  text-align:center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#precioProducto{
+font-family: Georgia, 'Times New Roman', Times, serif;
+color:#e77373;
+text-align:center;
+font-size:15px;
+font-weight:456;
+margin-bottom:0;
+border-style: solid;
+border-color: green;
+
+}
+
+
+.imagenProducto{
+padding: .25rem;
+background-color:azure;
+border: 1px solid #dee2e6;
+border-radius: .36rem;
+max-width: 100%;
+height: auto;
+
+}
+
+.descripcionProducto{
+font-family:Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+color:steelblue
+}
+
+.nombreProducto{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#productosTitle{
+  font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+/*Ayuda a visualizar al usuario de una forma visual en que sección de la web se encuentra.*/
+a#destacada{
+  color:greenyellow;
+  }
+
+#buscador{
+  display:flex;
+ }
+
+
+

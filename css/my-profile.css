@@ -1,0 +1,16 @@
+#passwordChange{
+    color:white;
+    display:grid;
+    }
+#modificar{
+    height: 12px;
+    width: 12px;
+    display:flexbox
+
+}
+
+.userDates{
+    text-align: left;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    max-height: 1.5em;
+   }

@@ -1,0 +1,82 @@
+html, body{
+    height: 100%;
+  }
+
+body {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #fbf598;
+  }
+
+  .signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+    /*Este codigo fue reutilizado de la fuente de codigo de mercadolibre.*/
+    /*Se encarga de enmarcar correctamente el login dentro de la caja que contiene el formulario y darle el estilo visual
+    de caja o sección.*/
+
+    /*Las 2 medidas "0 0.1rem 0.6rem" modifica el margen de la sombra de la caja(agrandan o achican la sombra) + el color*/
+    box-shadow: 0 0.1rem 0.6rem 0 #007bff;
+          /*hasta aqui.*/
+        
+  }
+
+  
+
+#botonEnvio{
+    /*Espacio entre el elemento y su propio borde*/
+    padding: 1rem;
+    
+    /*Tamaño de letra */
+    font-size: 0,72rem;
+
+    /*line-height establece la altura de una casilla */
+    line-height: 0.5;
+  
+    /*Redondea las esquinas, acepta 2 entradas.*/
+    border-radius:1rem;
+   
+    /*Colores del boton*/
+    color: #fff;
+    background-color: #55b1c2;
+    border: 1px solid rgba(0,0,0,0.3);
+}
+
+
+/*Diseño de los campos de texto*/
+input { 
+  
+  width: 100%; 
+  /*Espacio del margen de abajo*/
+  margin-bottom: 10px; 
+  /*Color de fondo*/
+  background: rgba(0,0,0,0.2);
+/*estilo del contorno:ninguno.-*/
+  outline: none;
+  /*Espacio entre los margenes*/
+  padding: 10px;
+  /*Tamaño de letra*/
+  font-size: 16px;
+  /*Color de letra*/
+  color: #fff;
+  border: 1px solid rgba(0,0,0,0.3);
+  /*Radio del borde*/
+  border-radius: 4px;
+  
+}
+  /*La imagen queda en un tamaño adecuado para la presentación del logo con este tamaño*/
+img{
+
+width: 144px;
+height: 126px;
+}
+
+#iniciarFb{
+  
+}

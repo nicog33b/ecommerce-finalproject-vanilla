@@ -1,0 +1,16 @@
+//controlador de rutas
+exports.getData = (req, res) =>{
+res.json({
+    "name": "Autos",
+    "description": "Los mejores precios en autos 0 kilómetro, de alta y media gama.",
+    "productCriteria": "Incluya aquí los productos que sean autos o relacionados: repuestos, accesorios, etc.",
+    "productCount": "122",
+    "images": [
+        "img/cat1.jpg",
+        "img/car1.jpg",
+        "img/car2.jpg",
+        "img/car3.jpg"
+    ]
+})
+
+}

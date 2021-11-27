@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>FeriApp - ¡Bienvenido a tu feria online!</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+    <link href="css/my-profile.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/dropzone.css" rel="stylesheet">
+    <link href="css/nav.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-lg site-header   sticky-top py-1 bg-dark">
+        <div class="container">
+
+            <div id="separacion">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a id="login-main" class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="categories.html">Categorías</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="vendedorDesactivado" class="nav-link" href="sell.html">Vender</a>
+                    </li>
+                    <li class="nav-item">
+
+            </div>
+            <div id="userNombre" class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="usuario" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                </button>
+                <div id="mostrarOcultar" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="cart.html">Mi carrito</a>
+                    <a class="dropdown-item" href="index.html" id="cerrar">Cerrar sesión</a>
+                </div>
+            </div>
+            </li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-3">
+                <ul class="nav nav-pills nav-stacked admin-menu">
+                    <li class="active"><a href="" data-target-id="profile"><i
+                                class="glyphicon glyphicon-user"></i> Profile</a></li>
+                    <li><a href="" data-target-id="change-password"><i class="glyphicon glyphicon-lock"></i> Change
+                            Password</a></li>
+                    <li><a href="" data-target-id="settings"><i class="glyphicon glyphicon-cog"></i> Settings</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-9  admin-content" id="profile">
+                <form id="dateForm">
+                    <div class="panel panel-info" style="margin: 1em;">
+                        <div class="panel-heading">
+
+                            <img align="right" id="modificar" src="img/modificar.png">
+                            <h3 class="panel-title">Nombre y apellido</h3>
+
+                        </div>
+                        <div class="userDates" contentEditable="true" id="nameProfile" class="panel-body">
+
+                        </div>
+                    </div>
+                    <div class="panel panel-info" style="margin: 1em;">
+                        <div class="panel-heading">
+                            <img align="right" id="modificar" src="img/modificar.png">
+                            <h3 class="panel-title">Email</h3>
+                        </div>
+                        <div class="userDates" contentEditable="true" id="emailProfile" class="panel-body">
+
+                        </div>
+                    </div>
+                    <div class="panel panel-info" style="margin: 1em;">
+                        <div class="panel-heading">
+                            <img align="right" id="modificar" src="img/modificar.png">
+                            <h3 class="panel-title">Edad</h3>
+                        </div>
+                        <div class="userDates"
+                            onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+                            contentEditable="true" id="ageProfile" class="panel-body">
+
+                        </div>
+                    </div>
+                    <div class="panel panel-info" style="margin: 1em;">
+                        <div class="panel-heading">
+                            <img align="right" id="modificar" src="img/modificar.png">
+                            <h3 class="panel-title">Numero de telefono</h3>
+                        </div>
+                        <div class="userDates"
+                            onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+                            contentEditable="true" id="phoneProfile">
+
+                        </div>
+                    </div>
+                    <div class="panel panel-info" style="margin: 1em;">
+                        <div>
+                            <input type="submit" class="form-control btn btn-primary" name="guardar" id="saveChanges">
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-9  admin-content" id="settings">
+                <div class="panel panel-info" style="margin: 1em;">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Notificaciones vía e-mail</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="label label-success">Activadas</div>
+                    </div>
+                </div>
+                <div class="panel panel-info" style="margin: 1em;">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Historial</h3>
+                    </div>
+                    <div class="panel panel-info" style="margin: 1em;">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Comprados</h3>
+                        </div>
+                    </div>
+                    <div class="panel panel-info" style="margin: 1em;">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Vendidos</h3>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-9  admin-content" id="change-password">
+                <form id="changePassword">
+
+
+                    <div class="panel panel-info" style="margin: 1em;">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><label for="new_password" class="control-label panel-title">New
+                                    Password</label></h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" name="password" id="new_password">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="panel panel-info" style="margin: 1em;">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><label for="confirm_password"
+                                    class="control-label panel-title">Confirm
+                                    password</label></h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" name="password_confirmation"
+                                        id="confirm_password">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="panel panel-info" style="margin: 1em;">
+                        <div>
+                            <input type="submit" class="form-control btn btn-primary" name="submit" id="passwordChange">
+                        </div>
+                    </div>
+            </div>
+
+            </form>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+    <div id="spinner-wrapper">
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/dropzone.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/my-profile.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/login.js"></script>
+</body>
+
+</html>
