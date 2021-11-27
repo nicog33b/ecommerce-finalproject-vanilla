@@ -15,6 +15,12 @@
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/login.css" rel="stylesheet">
 
+
+<!-- 
+  Google sign in scripts -->
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
 <!--1) Cree los botones y los labels.--->
@@ -46,21 +52,13 @@
     <!-- Boton que envía el formulario.--->
     <input type="submit" id="botonEnvio" value="Login">
     <br>
-    <br>
-    <fb:login-button onclick="testAPI()" onclick="checkLoginState() " appId="534968161160578"
-      scope="public_profile,email" id="facebook-login-button">
-    </fb:login-button>
-
-    <div id="status"></div>
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous"
-      src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v11.0&appId=534968161160578&autoLogAppEvents=1"
-      nonce="G8WxhRuK"></script>
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    
 
   </form>
 
 
-  <script src="js/facebookSDK.js"></script>
+  <script src="js/googleSignIn.js"></script>
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
   <script src="js/nav.js"></script>
