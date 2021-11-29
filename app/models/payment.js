@@ -26,6 +26,12 @@ const paymentSchema = new mongoose.Schema({
         },
         numeroBuy: {
           type: String
+        },
+        country:{
+          type:String
+        },
+        price:{
+          type:String
         }
     },
     {

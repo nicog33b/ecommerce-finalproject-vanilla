@@ -1,5 +1,6 @@
-#userBuy{
+#userBuy,#price,#country{
     visibility: hidden;
+    
 }
 #removeItem{
 margin-left:1em;

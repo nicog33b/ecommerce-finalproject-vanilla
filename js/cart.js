@@ -197,6 +197,7 @@ let completeProcess = () => {
 }
 
 
+
 let loadCountrySelect = () => {
   var departamentos = ["Uruguay", "Chile", "Argentina", "Brasil", "Colombia", "Ecuador", "Estados unidos "]; //array de los departamentos.
   var select = document.getElementById("selectCountry"); //Seleccionamos el select
@@ -209,7 +210,13 @@ let loadCountrySelect = () => {
 }
  
 document.addEventListener("DOMContentLoaded", function (e) {
- document.getElementById("userBuy").value=username[0].usuario
+ 
+  loadCountrySelect()
+
+ document.getElementById("userBuy").value=username[0].usuario;
+ document.getElementById("country").value= selectCountry.value;
+ document.getElementById("price").value= parseFloat(total.textContent)
+
   getJSONData(CART_INFO2_URL).then(function (carrito) {
     if (carrito.status === "ok") {
       let buyCarInfo = carrito.data;

@@ -22,7 +22,10 @@ async function addPayment(req, res) {
             dateBuy,
             cvvBuy,
             calleBuy,
-            esquinaBuy
+            esquinaBuy,
+            numeroBuy,
+            country,
+            price
         } = req.body
 
         const paymentmodel = await paymentModel({
@@ -32,7 +35,10 @@ async function addPayment(req, res) {
             dateBuy,
             cvvBuy,
             calleBuy,
-            esquinaBuy
+            esquinaBuy,
+            numeroBuy,
+            country,
+            price
         })
 
         const paymentStored = paymentmodel.save()

@@ -130,6 +130,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
   document.getElementById("saveChanges").value = "Guardar cambios"
   //bloquea el boton enter en los formularios.
   blockEnter()
+ 
+
+//   document.getElementById("historial").addEventListener('click', function () {
+// href="127.0.0.1:3020/payment"
+//  });
 
   document.getElementById("changePhoto").addEventListener('click', function () {
     //strings utilizados.
