@@ -17,8 +17,8 @@ formularioUsuario.addEventListener("submit", function (evento) {
     pass: contraseña.value,
     name:"",
     email:"",
-    edad:"",
-    phone:""
+    phone:"",
+    photo_url:"https://i.ibb.co/ZXjSHK8/perfil-Vacio.png"
      });
 
   //Visualizar los datos del usuario ingresado.   

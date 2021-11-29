@@ -70,6 +70,10 @@
                             Password</a></li>
                     <li><a href="" data-target-id="settings"><i class="glyphicon glyphicon-cog"></i> Settings</a></li>
                 </ul>
+                <img id="userPhoto" onerror="reemplaza_imagen(this);" src="" alt="perfil-Vacio" border="0"><button id="changePhoto"
+                    for="userPhoto" class="label-info">Cambiar foto</button><input id="img_url" class="form-control"
+                    type="text" placeholder="https://i.postimg.cc/2y3xL4mG/cat6.jpg"><button id="newPhoto" type="button"
+                    class="btn btn-success">Confirmar</button><label id="indication">Sube tu foto <a href="https://postimages.org/">aqui</a> y pega el link directo que te otorgan.</label>
             </div>
 
             <div class="col-md-9  admin-content" id="profile">
@@ -198,10 +202,8 @@
 
             </form>
         </div>
-
-
-
     </div>
+
 
 
 
@@ -221,7 +223,7 @@
     <script src="js/init.js"></script>
     <script src="js/my-profile.js"></script>
     <script src="js/nav.js"></script>
-    <script src="js/login.js"></script>
+
 </body>
 
 </html>

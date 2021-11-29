@@ -1,4 +1,6 @@
-
+#userBuy{
+    visibility: hidden;
+}
 #removeItem{
 margin-left:1em;
 color: red;

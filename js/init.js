@@ -10,6 +10,17 @@ const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
 const CART_INFO2_URL = "https://japdevdep.github.io/ecommerce-api/cart/654.json"
 
+// "use strict";
+// const CATEGORIES_URL = "http://127.0.0.1:3020/category";
+// const PUBLISH_PRODUCT_URL = "https://japdevdep.github.io/ecommerce-api/product/publish.json";
+// const CATEGORY_INFO_URL = "http://127.0.0.1:3020/category-info";
+// const PRODUCTS_URL = "http://127.0.0.1:3020/product";
+// const PRODUCT_INFO_URL = "http://127.0.0.1:3020/relatedProduct";
+// const PRODUCT_INFO_COMMENTS_URL = "http://127.0.0.1:3020/comments";
+// const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
+// const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
+// const CART_INFO2_URL = "http://127.0.0.1:3020/carrito";
+
 var showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
 }

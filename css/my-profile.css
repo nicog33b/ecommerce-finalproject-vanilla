@@ -8,9 +8,17 @@
     display:flexbox
 
 }
-
+#userPhoto{
+    width: 12em;
+    height:12em;
+    margin-top: 3em;
+    box-shadow: 0 0.1rem 0.6rem 0 #007bff;
+}    
 .userDates{
     text-align: left;
     font-family: Georgia, 'Times New Roman', Times, serif;
     max-height: 1.5em;
+   }
+   #newPhoto,#img_url,#indication{
+visibility: hidden;
    }

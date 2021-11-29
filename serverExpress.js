@@ -13,8 +13,7 @@ const userRouterComments = require('./app/route/comments')
 const userRouterRelatedProduct = require('./app/route/relatedProduct')
 const userRouterCategory = require('./app/route/category')
 const userRouterCategoryInfo = require('./app/route/category-info');
-
-// const userRouterPayment=require('./app/route/payment')
+const userRouterPayment=require('./app/route/payment')
 
 app.use(bodyParser.json({
     limit: '20mb'
@@ -35,33 +34,7 @@ app.use(userRouterCarrito)
 app.use(userRouterRelatedProduct)
 app.use(userRouterCategory)
 app.use(userRouterCategoryInfo)
-// app.use(userRouterPayment)
-
-const paySchema = {
-    userBuyer: String,
-    cardBuy: String
-}
-
-const pay = mongoose.model("pay", paySchema);
-
-app.get("http://127.0.0.1:3020/carrito"
-
-
-    , (req, res) => {
-        res.sendFile(__dirname + "/cart.html");
-
-    })
-
-app.post("http://127.0.0.1:3020/carrito", (req, res) => {
-    let newPay = new pay({
-        name: userBuyer,
-        count: cardBuy
-    })
-    newPay.save()
-    res.redirect("index")
-})
-
-
+app.use(userRouterPayment)
 
 
 app.listen(port, () => {

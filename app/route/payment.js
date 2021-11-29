@@ -1,15 +1,51 @@
-// const express = require('express')
-// //se conecta con el controlador por medio de la ruta.
-// const myController = require('../schemas/payment')
-// //new route
-// const route = express.Router()
-// const path='payment'
+const express = require('express')
+const myController = require('../controller/payment')
+const route = express.Router()
+const paymentModel = require('../models/payment')
+const path = 'payment'
 
-//  route.get(
-//      `/${path}`, myController.getData
-//      )
-//  route.post(
-//     `/${path}`, myController.insertData
-// )
-//  //exportando el modulo podemos utilizar este modulo en otros archivos.
-//  module.exports=route;
+async function getPayment(req, res) {
+    //find consulta en mongo db
+    //lean convierte los resultados en objetos planos de javascript
+    //exec devuelve la promesa
+const payments = await paymentModel.find().lean().exec()
+res.status(200).send({payments})
+}
+
+
+async function addPayment(req, res) {
+    try {
+        const {
+            userBuy,
+            userBuyer,
+            cardBuy,
+            dateBuy,
+            cvvBuy,
+            calleBuy,
+            esquinaBuy
+        } = req.body
+
+        const paymentmodel = await paymentModel({
+            userBuy,
+            userBuyer,
+            cardBuy,
+            dateBuy,
+            cvvBuy,
+            calleBuy,
+            esquinaBuy
+        })
+
+        const paymentStored = paymentmodel.save()
+        res.status(201).send({ paymentStored })
+    } catch (e) {
+        res.status(500).send({ message: e.message })
+
+    }
+
+}
+
+route.get(`/${path}`, getPayment)
+
+route.post(`/${path}`, addPayment);
+//exportando el modulo podemos utilizar este modulo en otros archivos.
+module.exports = route;

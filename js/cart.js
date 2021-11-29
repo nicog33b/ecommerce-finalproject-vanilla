@@ -15,6 +15,8 @@ let buttonMethodPay = document.getElementById("buttonMethodPay")
 let completeToProcess=0;
 
 
+
+
 function clearGroup(elem) {
   //si uno esta activado los demás estan desactivados.
   var group = document.getElementsByClassName("checkGroup1");
@@ -67,19 +69,6 @@ let loadItemsSubtotal = () => {
     document.getElementById("total").innerHTML = subtotal + envio + " USD";
   }
 }
-
-
-let loadCountrySelect = () => {
-  var departamentos = ["Uruguay", "Chile", "Argentina", "Brasil", "Colombia", "Ecuador", "Estados unidos "]; //array de los departamentos.
-  var select = document.getElementById("selectCountry"); //Seleccionamos el select
-
-  for (var i = 0; i < departamentos.length; i++) {
-    var option = document.createElement("option"); //Creamos la opcion
-    option.innerHTML = departamentos[i]; //Metemos el texto en la opción
-    select.appendChild(option); //Metemos la opción en el select
-  }
-}
-
 
 
 let addItemToCart = () => {
@@ -187,9 +176,7 @@ if(nameBuy && dateBuy && cardBuy && cvvBuy && calleBuy && esquinaBuy && numberBu
 
 }
 
-let recolectData = () => {
 
-}
 
 
 let closeBuy=()=>{
@@ -210,15 +197,19 @@ let completeProcess = () => {
 }
 
 
+let loadCountrySelect = () => {
+  var departamentos = ["Uruguay", "Chile", "Argentina", "Brasil", "Colombia", "Ecuador", "Estados unidos "]; //array de los departamentos.
+  var select = document.getElementById("selectCountry"); //Seleccionamos el select
 
+  for (var i = 0; i < departamentos.length; i++) {
+    var option = document.createElement("option"); //Creamos la opcion
+    option.innerHTML = departamentos[i]; //Metemos el texto en la opción
+    select.appendChild(option); //Metemos la opción en el select
+  }
+}
  
 document.addEventListener("DOMContentLoaded", function (e) {
-
-
-  loadCountrySelect()
-
-
-
+ document.getElementById("userBuy").value=username[0].usuario
   getJSONData(CART_INFO2_URL).then(function (carrito) {
     if (carrito.status === "ok") {
       let buyCarInfo = carrito.data;
@@ -226,8 +217,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
       console.log(arrayCarrito)
       addItemToCart()
       loadItemsSubtotal()
-
-
 
       document.getElementById("buttonCheckout").addEventListener('click', function () {
         completeProcess()

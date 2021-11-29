@@ -1,4 +1,8 @@
 "use strict";
+//campos de cambio de imagen
+let form1 = document.getElementById("newPhoto")
+let form2 = document.getElementById("img_url")
+let form3 = document.getElementById("indication")
 //cambios de password.
 const newPass = document.getElementById("new_password");
 const confirmPass = document.getElementById("confirm_password");
@@ -7,6 +11,9 @@ const nameP = document.getElementById("nameProfile");
 const emailP = document.getElementById("emailProfile");
 const ageP = document.getElementById("ageProfile");
 const phoneP = document.getElementById("phoneProfile");
+let photoUser = document.getElementById("userPhoto");
+let photo = document.getElementById("userPhoto").src
+let photoAdd = document.getElementById("img_url")
 //información del usuario guardada y invocada desde el localStorage.
 
 
@@ -30,7 +37,6 @@ $(document).ready(function () {
     $('#' + target).show();
   });
 });
-
 
 
 
@@ -59,6 +65,8 @@ changePassword.addEventListener("submit", function (evento1) {
 
 
 document.getElementById("saveChanges").addEventListener("click", function () {
+
+
   //verifica si hay un usuario logeado.
   if (username != null) {
 
@@ -87,7 +95,7 @@ let profileDate = () => {
 }
 
 let blockEnter = () => {
-
+// //hace inutil el enter para que el usuario no pueda hacer saltos de linea.
   nameP.addEventListener('keypress', (e) => {
     if (e.which === 13) e.preventDefault();
   });
@@ -97,13 +105,73 @@ let blockEnter = () => {
 
 }
 
+//evita bugs cuando se cargan urls erroneas.
+function reemplaza_imagen(imagen) {
+ 
+  imagen.src = "https://i.postimg.cc/HnGVqkgp/perfil-Vacio.png";
+  username[0].photo_url="https://i.postimg.cc/KYphC3xT/cat7.jpg"
+  return true;
+}
+
 document.addEventListener("DOMContentLoaded", function (e) {
+  photoUser.src = username[0].photo_url;
+  if (username[0].photo_url === "") {
+    photoUser.src = "https://i.postimg.cc/HnGVqkgp/perfil-Vacio.png"
+      //Agrega imagen del usuario desde el localStorage, si el usuario aun no ha elegido ninguna va por defecto.
+  photoUser.src = username[0].photo_url;
+  }  
+  
+
+
+  
   //invoca la información del usuario.
   profileDate()
   //texto del boton guardar cambios.
   document.getElementById("saveChanges").value = "Guardar cambios"
-//bloquea el boton enter en los formularios.
+  //bloquea el boton enter en los formularios.
   blockEnter()
 
+  document.getElementById("changePhoto").addEventListener('click', function () {
+    //strings utilizados.
+    let visible = "visible";
+    let notVisible = "hidden"
+    //si los form para cambiar la imagen estan visibles los hace invisibles.
+    if (form1.style.visibility === visible && form2.style.visibility === visible && form3.style.visibility === visible) {
+      form1.style.visibility = notVisible
+      form2.style.visibility = notVisible
+      form3.style.visibility = notVisible
+    } else {
+      //si no estan siendo visibles entonces los vuelve visibles.
+      form1.style.visibility = visible
+      form2.style.visibility = visible
+      form3.style.visibility = visible
+    }
+ });
+
+  document.getElementById("newPhoto").addEventListener('click', function () {
+    
+    //obtiene el url ingresado por el usuario para cambiar la foto.
+    let newUrl = photoAdd.value;
+    //se asegura de que el url y el host de la imagen sea el recomendado.
+    if (newUrl.includes('https://i.postimg.cc/')){
+      //cambia el url 
+            username[0].photo_url = newUrl;
+            //guarda el nuevo url en localStorage
+    localStorage.setItem('userConectado', JSON.stringify(username));
+    //cambia el src de la imagen para agregar la nueva imagen.
+
+    photoUser.src = newUrl;
+    }else{
+      //Si el url no contiene "https://i.postimg.cc/" entonces vuelve a iniciar la foto por defecto.
+      photoUser.src="https://i.postimg.cc/HnGVqkgp/perfil-Vacio.png"
+      //cambia el url por el link de la imagen por defect.
+      username[0].photo_url ="https://i.postimg.cc/HnGVqkgp/perfil-Vacio.png"
+      //y lo guarda en localStorage.
+      localStorage.setItem('userConectado', JSON.stringify(username));
+      
+    }
+
+
+  });
 
 });
